@@ -13,13 +13,13 @@ public class AnimalController : ControllerBase
     [HttpGet]
     public ActionResult<IEnumerable<AnimalDTO>> GetAnimals()
     {
-       using SqlConnection sqlConnection = new SqlConnection("Data Source=db-mssql;Initial Catalog=2019SBD;Integrated Security=True");
+       using SqlConnection sqlConnection = new SqlConnection("Data Source=db-mssql;Initial Catalog=s19787;Integrated Security=True");
 
        using SqlCommand sqlCommand = new SqlCommand();
 
         sqlCommand.Connection = sqlConnection;
 
-        sqlCommand.CommandText = "SELECT * from  Animal";
+        sqlCommand.CommandText = "SELECT * from  Animals";
         sqlConnection.Open();
 
         SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
